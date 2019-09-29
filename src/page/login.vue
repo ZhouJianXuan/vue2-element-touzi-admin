@@ -3,8 +3,8 @@
 	  	<transition name="form-fade" mode="in-out">
 	  		<section class="form_contianer">
 			     <div class='titleArea rflex'>
-					<img class="logo" :src="logo" alt="小爱admin">
-					<span class='title'>小爱<i>Admin</i></span>
+					<img class="logo" :src="logo" alt="高校固定资产管理系统">
+					<span class='title'>高校固定资产管理系统</span>
 				</div>
 		    	<el-form :model="loginForm" :rules="rules" ref="loginForm" class="loginForm">
 					<el-form-item prop="username" class="login-item">
@@ -16,14 +16,12 @@
 						<el-input @keyup.enter.native ="submitForm('loginForm')" class="area" type="password" placeholder="密码" v-model="loginForm.password"></el-input>
 					</el-form-item>
 					<el-form-item>
-				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">SIGN IN</el-button>
+				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">登录</el-button>
 				  	</el-form-item>
 					<div class="tiparea">
-						<p class="wxtip">温馨提示：</p>
-						<p class="tip">用户名为：admin/editor<span class="tips">(可用于切换权限)</span></p>
-						<p class="tip">密码为：123456</p>
+						<p class="wxtip">温馨提示：<i>请使用学号或者工号登录</i></p>
 					</div>
-					<div class="sanFangArea">
+					<!-- <div class="sanFangArea">
 						<p class="title">第三方账号登录</p>
 						<ul class="rflex">
 							<li @click="loginByWechat">
@@ -36,7 +34,7 @@
 							    <icon-svg icon-class="iconGithub" />
 							</li>
 						</ul>
-				    </div>
+				    </div> -->
 				</el-form>
 	  		</section>
 	  	</transition>
@@ -44,7 +42,7 @@
 </template>
 
 <script>
-	import logoImg from "@/assets/img/logo.png";
+	import logoImg from "@/assets/img/huaruan.jpeg";
 	import { login } from "@/api/user";
     import { setToken } from '@/utils/auth'
 
@@ -53,8 +51,8 @@
 			return {
 				logo:logoImg,
 				loginForm: {
-					username: 'admin',
-					password: '123456'
+					username: '',
+					password: ''
 				},
 				rules: {
 					username: [
@@ -100,7 +98,7 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background: url(../assets/img/bg9.jpg) no-repeat center center;
+		background: url(../assets/img/bg99.jpg) no-repeat center center;
 		background-size: 100% 100%;
 	}
 	.form_contianer{
